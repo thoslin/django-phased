@@ -59,8 +59,7 @@ class PhasedNode(Node):
             try:
                 storage[var_name] = Variable(var_name).resolve(context)
             except VariableDoesNotExist:
-                raise TemplateSyntaxError(
-                    '"phased" tag got an unknown variable: %r' % var_name)
+                pass
 
         storage = backup_csrf_token(context, storage)
 
